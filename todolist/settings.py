@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todolist_app',
+    'jquery',
+    'el_pagination',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,7 @@ MIDDLEWARE = [
 ]
 LOGIN_REDIRECT_URL = 'todo_list'
 LOGOUT_REDIRECT_URL = 'login'
+EL_PAGINATION_PER_PAGE = 3
 
 ROOT_URLCONF = 'todolist.urls'
 
@@ -65,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },

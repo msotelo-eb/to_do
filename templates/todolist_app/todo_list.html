@@ -8,6 +8,9 @@
     <th>Was done?</th>
     <th>Options</th>
   </tr>
+{% load el_pagination_tags %}
+
+{% paginate object_list %}
   {% for todo in object_list %}
     <tr>
         <th>
@@ -30,6 +33,10 @@
     <h5>No todo yet.</h5>
   {% endfor %}
 </table>
+<h4>{% show_pages %}</h4>
+{% get_pages %}
+<h4>Previous: {{ pages.previous.number }}</h4>
+<h4>Next: {{ pages.next.number }}</h4>
 <a href="{% url 'todo_create' %}">Create</a>
 <a href="{% url 'logout' %}">Logout</a>
 
