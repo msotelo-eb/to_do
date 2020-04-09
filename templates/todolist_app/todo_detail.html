@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<h1>Details ID: {{ object.id }}</h1>
+<p>Title: {{ object.title }}</p>
+<p>Description: {{ object.description }}</p>
+<p>Assigned to: {{ object.assigned_user }}</p>
+<p>Was done: {{ object.done }}</p>
+<p>Created by: {{ object.created_by }}</p>
+<p>Created at: {{ object.created|date  }}</p>
+<p>Updated by: {{ object.updated_by }}</p>
+<p>Updated at: {{ object.updated|date  }}</p>
+<p>Priority: {{ object.priority}}</p>
+<a href="{% url 'todo_list' %}">Back to dashboard</a>
