@@ -8,10 +8,8 @@ class Priority(models.Model):
 	order = models.IntegerField()
 
 	def __str__(self):
-		return 'id {}: {} (order {})'.format(
-			self.id,
+		return '{}'.format(
 			self.name,
-			self.order,
 		)
 
 

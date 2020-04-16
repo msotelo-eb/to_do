@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'todolist_app',
     'jquery',
     'el_pagination',
+    'django_filters',
+    'bootstrapform',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

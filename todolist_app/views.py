@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy, reverse
 from todolist_app.models import Todo
+from .filters import TodoFilter
 
 
 def logout_view(request):
@@ -18,6 +19,12 @@ class TodoListView(LoginRequiredMixin, ListView):
 
 	def get_queryset(self):
 		return Todo.objects.filter(assigned_user=self.request.user)
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['filter'] = TodoFilter(self.request.GET, queryset=self.get_queryset())
+		return context
+
 
 
 class TodoCreateView(LoginRequiredMixin, CreateView):
